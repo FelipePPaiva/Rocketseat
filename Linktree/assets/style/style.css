@@ -1,7 +1,7 @@
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 :root{
@@ -11,6 +11,7 @@
     --surface-color: rgba(255, 255, 255, 0.1); /*Background-color = cor de fundo da tag a*/
     --surface-color-hover: rgba(255, 255, 255, 0.05);/*Background-color = cor de fundo da tag. Quando passado o mouse*/
     --sociallink-hover: rgba(255,255,255,0.2);/*Background-color = cor de fundo da tag. Quando passado o mouse*/
+    --switch-icons: url('../images/MoonStars.svg');
 }
 
 .light{
@@ -20,34 +21,36 @@
     --surface-color: rgba(0, 0, 0, 0.05);
     --surface-color-hover: rgba(0, 0, 0,0.02);
     --sociallink-hover: rgba(0,0,0,0.1);
+    --switch-icons:url('../images/Sun.svg');
 }
 
 body *{
     color: var(--text-color);
     font-family: 'Inter', sans-serif;
 }
+
 body{
     background-image: var(--bg-image);
-    background-repeat: no-repeat;
     background-position: top center;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
 .container{
-    width: 360px;
     margin: 56px auto 0;
     padding: 0 24px;
+    width: 360px;
 }
 
 #profile{
-    text-align: center;
     padding: 24px;
+    text-align: center;
 }
 
 .profile-img{
-    width: 112px;
     border: 3px solid #9d9c9c;
     border-radius: 100%;
+    width: 112px;
 }
 
 #profile p{
@@ -56,12 +59,46 @@ body{
     margin-top:8px;
 }
 
+/*Switch*/
+.light .switch button{
+    right: 0;
+    left: initial;
+}
+
+.switch{
+    width: 64px;
+    position: relative;
+    margin: 0 auto;
+}
+.switch button{
+    background: #fff var(--switch-icons) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    height: 32px;
+    position: absolute;
+    top:50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 32px;
+    z-index: 1;
+}
+
+.switch span{
+    display: block; 
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 9999px; /*Deixar uma borda oval*/
+    height: 24px;
+    -webkit-backdrop-filter: blur(4px);
+    width: 64px;
+}
+
 ul{
     display: flex;
     flex-direction: column;
     gap:16px;
     list-style: none;
-    padding: 10px 0;
+    padding: 24px 0 10px;
 }
 
 ul li a{
