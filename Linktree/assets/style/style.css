@@ -6,11 +6,20 @@
 
 :root{
     --text-color:#fff;
+    --bg-image:url('../images/bg-mobile.jpg');
+    --stroke-color: rgba(255,255,255,0.5); /*Stroke= Borda*/
+    --surface-color: rgba(255, 255, 255, 0.1); /*Background-color = cor de fundo da tag a*/
+    --surface-color-hover: rgba(255, 255, 255, 0.05);/*Background-color = cor de fundo da tag. Quando passado o mouse*/
+    --sociallink-hover: rgba(255,255,255,0.2);/*Background-color = cor de fundo da tag. Quando passado o mouse*/
 }
 
 .light{
     --text-color: #000;
-    --bg-image:url('../images/bg-mobile-light.jpg')
+    --bg-image:url('../images/bg-mobile-light.jpg');
+    --stroke-color: rgba(0, 0, 0, 0.5); 
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0,0.02);
+    --sociallink-hover: rgba(0,0,0,0.1);
 }
 
 body *{
@@ -57,8 +66,8 @@ ul{
 
 ul li a{
     align-items: center;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
     border-radius: 8px;
     display: flex;
     font-weight: 500;
@@ -70,7 +79,7 @@ ul li a{
 }
 
 ul li a:hover{
-    background: rgba(255,255,255,0.05);
+    background: var(--surface-color-hover);
     border: 1.5px solid var(--text-color);
 }
 
@@ -91,7 +100,7 @@ ul li a:hover{
 }
 
 .social-links a:hover{
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--sociallink-hover);
 }
 
 footer{
